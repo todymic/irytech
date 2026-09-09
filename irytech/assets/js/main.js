@@ -1,6 +1,8 @@
 (function () {
 	'use strict';
 
+	var CONTACT_ENDPOINT = 'contact.php';
+
 	/* ---------- Scroll progress + header state ---------- */
 	var header = document.getElementById( 'site-header' );
 	var progress = document.getElementById( 'scroll-progress' );
@@ -67,44 +69,6 @@
 		} );
 	}
 
-	/* ---------- Animated stat counters ---------- */
-	var statEls = document.querySelectorAll( '[data-count]' );
-
-	function animateCount( el ) {
-		var target = parseInt( el.getAttribute( 'data-count' ), 10 ) || 0;
-		var suffix = el.getAttribute( 'data-suffix' ) || '';
-		var duration = 1200;
-		var start = null;
-
-		function step( ts ) {
-			if ( start === null ) start = ts;
-			var progressRatio = Math.min( ( ts - start ) / duration, 1 );
-			var eased = 1 - Math.pow( 1 - progressRatio, 3 );
-			el.textContent = Math.round( eased * target ) + suffix;
-			if ( progressRatio < 1 ) {
-				window.requestAnimationFrame( step );
-			}
-		}
-		window.requestAnimationFrame( step );
-	}
-
-	if ( statEls.length && 'IntersectionObserver' in window ) {
-		var statObserver = new IntersectionObserver(
-			function ( entries ) {
-				entries.forEach( function ( entry ) {
-					if ( entry.isIntersecting ) {
-						animateCount( entry.target );
-						statObserver.unobserve( entry.target );
-					}
-				} );
-			},
-			{ threshold: 0.6 }
-		);
-		statEls.forEach( function ( el ) {
-			statObserver.observe( el );
-		} );
-	}
-
 	/* ---------- Portfolio gallery modal (front / back-office) ---------- */
 	var galleryDataEl = document.getElementById( 'irytech-portfolio-data' );
 	var projects = galleryDataEl ? JSON.parse( galleryDataEl.textContent ) : [];
@@ -137,7 +101,7 @@
 
 			if ( slide.image ) {
 				var img = document.createElement( 'img' );
-				img.src = irytechData.themeUrl + '/assets/img/portfolio/' + slide.image;
+				img.src = 'assets/img/portfolio/' + slide.image;
 				img.alt = slide.label || activeProject.name;
 				frame.appendChild( img );
 			} else {
@@ -211,7 +175,7 @@
 	var form = document.getElementById( 'contact-form' );
 	var feedback = document.getElementById( 'contact-form-feedback' );
 
-	if ( form && typeof irytechData !== 'undefined' ) {
+	if ( form ) {
 		form.addEventListener( 'submit', function ( e ) {
 			e.preventDefault();
 
@@ -224,17 +188,14 @@
 			}
 
 			var formData = new FormData( form );
-			formData.append( 'action', 'irytech_contact' );
-			formData.append( 'nonce', irytechData.nonce );
 
 			submitBtn.classList.add( 'is-loading' );
 			feedback.textContent = '';
 			feedback.className = 'contact-form__feedback';
 
-			fetch( irytechData.ajaxUrl, {
+			fetch( CONTACT_ENDPOINT, {
 				method: 'POST',
 				body: formData,
-				credentials: 'same-origin',
 			} )
 				.then( function ( res ) { return res.json(); } )
 				.then( function ( data ) {
@@ -243,11 +204,11 @@
 						grecaptcha.reset();
 					}
 					if ( data.success ) {
-						feedback.textContent = data.data.message;
+						feedback.textContent = data.message;
 						feedback.classList.add( 'is-success' );
 						form.reset();
 					} else {
-						feedback.textContent = data.data.message;
+						feedback.textContent = data.message;
 						feedback.classList.add( 'is-error' );
 					}
 				} )
