@@ -181,11 +181,9 @@ button { font-family: inherit; cursor: pointer; }
 	transition: background 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 .site-header.is-scrolled {
-	background: rgba(255, 255, 255, 0.92);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	border-bottom-color: var(--border);
-	box-shadow: 0 8px 28px rgba(15, 17, 20, 0.08);
+	background: var(--dark);
+	border-bottom-color: var(--dark-border);
+	box-shadow: 0 8px 28px rgba(6, 7, 10, 0.35);
 }
 
 .site-header__inner {
@@ -199,12 +197,23 @@ button { font-family: inherit; cursor: pointer; }
 	display: inline-flex;
 	align-items: center;
 }
+.site-header .site-logo {
+	display: grid;
+	height: 100px;
+}
 .site-logo__img {
-	height: 42px;
+	height: 100px;
 	width: auto;
 	display: block;
 	object-fit: contain;
 }
+.site-header .site-logo__img {
+	grid-area: 1 / 1;
+	transition: opacity 0.3s var(--ease);
+}
+.site-header .site-logo__img--dark { opacity: 0; }
+.site-header.is-scrolled .site-logo__img--light { opacity: 0; }
+.site-header.is-scrolled .site-logo__img--dark { opacity: 1; }
 .site-footer .site-logo__img { height: 34px; }
 
 .site-nav {
@@ -229,6 +238,8 @@ button { font-family: inherit; cursor: pointer; }
 }
 .site-nav__link:hover { color: var(--rose); }
 .site-nav__link:hover::after { width: 100%; }
+.site-header.is-scrolled .site-nav__link { color: #ffffff; }
+.site-header.is-scrolled .site-nav__link:hover { color: var(--rose); }
 
 .site-header__actions {
 	display: flex;
@@ -250,11 +261,12 @@ button { font-family: inherit; cursor: pointer; }
 	height: 2px;
 	background: var(--navy);
 	border-radius: 2px;
-	transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+	transition: transform 0.3s var(--ease), opacity 0.3s var(--ease), background 0.3s var(--ease);
 }
 .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.site-header.is-scrolled .nav-toggle span { background: #ffffff; }
 
 /* ---------- Hero ---------- */
 .hero {
