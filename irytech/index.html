@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Irytech – Agence web &amp; développement à Madagascar</title>
+<title>Irytech – Agence digitale à Madagascar</title>
 <meta name="description" content="Irytech, agence digitale basée à Madagascar : conception de sites web, applications et plateformes sur-mesure.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,16 +16,16 @@
 <header class="site-header" id="site-header">
 	<div class="container site-header__inner">
 		<a href="#hero" class="site-logo">
-			<img src="assets/img/brand/logo_sombre.png" alt="Irytech" class="site-logo__img site-logo__img--light">
-			<img src="assets/img/brand/logo.png" alt="Irytech" class="site-logo__img site-logo__img--dark">
+			<img src="assets/img/brand/logo.png" alt="Irytech" class="site-logo__img">
 		</a>
 
 		<nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+			<a href="#hero" class="site-nav__link is-active">Accueil</a>
+			<a href="#services" class="site-nav__link">Services</a>
 			<a href="#realisations" class="site-nav__link">Réalisations</a>
-			<a href="#expertise" class="site-nav__link">Domaine technique</a>
+			<a href="#apropos" class="site-nav__link">À propos</a>
 			<a href="#contact" class="site-nav__link">Contact</a>
-			<a href="#avis" class="site-nav__link">Avis clients</a>
-			<a href="#contact" class="btn btn--primary btn--sm">Démarrer un projet</a>
+			<a href="#contact" class="btn btn--primary btn--sm">Parlons de votre projet →</a>
 		</nav>
 
 		<div class="site-header__actions">
@@ -39,30 +39,99 @@
 <main>
 
 	<!-- ===== Hero ===== -->
-	<section class="hero section-band" id="hero">
+	<section class="hero" id="hero">
 		<div class="container hero__inner">
 			<div class="hero__text">
-				<p class="hero__eyebrow reveal" data-reveal>Studio digital · Madagascar</p>
+				<p class="hero__eyebrow reveal" data-reveal>Agence digitale</p>
 
 				<h1 class="hero__title reveal" data-reveal data-reveal-delay="80">
-					Le savoir-faire technique, au service de <span class="hero__title--accent">votre ambition</span>.
+					Des solutions digitales sur mesure pour <span class="hero__title--accent">votre croissance</span>
 				</h1>
 
 				<p class="hero__subtitle reveal" data-reveal data-reveal-delay="140">
-					Sites, applications et plateformes sur-mesure, pensés pour durer.
+					Irytech vous accompagne dans la conception, le développement et la mise en ligne de vos projets digitaux. Sites web, applications, solutions sur mesure... Nous transformons vos idées en expériences digitales performantes.
 				</p>
 
-				<div class="hero__actions reveal" data-reveal data-reveal-delay="220">
-					<a href="#realisations" class="btn btn--primary">Voir nos réalisations</a>
-					<a href="#contact" class="btn btn--outline-light">Nous contacter</a>
+				<div class="hero__actions reveal" data-reveal data-reveal-delay="200">
+					<a href="#services" class="btn btn--primary">Découvrir nos services →</a>
+					<a href="#realisations" class="btn btn--outline-light">Voir nos réalisations</a>
+				</div>
+
+				<div class="hero__badges reveal" data-reveal data-reveal-delay="260">
+					<span class="hero__badge">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+						Expertise technique
+					</span>
+					<span class="hero__badge">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+						Proximité &amp; écoute
+					</span>
+					<span class="hero__badge">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+						Solutions sur mesure
+					</span>
 				</div>
 			</div>
 
 			<div class="hero__visual reveal" data-reveal data-reveal-delay="180" aria-hidden="true">
-				<span class="hero__glow"></span>
-				<div class="hero__card">
-					<span class="hero__card-num">4</span>
-					<span class="hero__card-label">Plateformes livrées</span>
+				<img src="assets/img/mockups/hero-laptop.png" alt="" class="hero__laptop">
+				<img src="assets/img/mockups/hero-phone.png" alt="" class="hero__phone">
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== Services ===== -->
+	<section class="services section-band" id="services">
+		<div class="container">
+			<div class="section-head reveal" data-reveal>
+				<div class="section-head__title">
+					<p class="section-eyebrow">Nos services</p>
+					<h2 class="section-title">Une expertise complète pour vos projets digitaux</h2>
+				</div>
+				<p class="section-head__text">
+					Du site vitrine à la plateforme sur mesure, nous vous accompagnons à chaque étape de votre projet avec des technologies modernes et des méthodes agiles.
+				</p>
+			</div>
+
+			<div class="services-grid">
+				<div class="service-card reveal" data-reveal>
+					<span class="service-card__icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+					</span>
+					<span class="service-card__title">Développement web &amp; mobile</span>
+					<span class="service-card__desc">Sites vitrines, e-commerce, applications web et mobiles sur-mesure.</span>
+				</div>
+
+				<div class="service-card reveal" data-reveal data-reveal-delay="70">
+					<span class="service-card__icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2Z"/></svg>
+					</span>
+					<span class="service-card__title">UX/UI Design</span>
+					<span class="service-card__desc">Des interfaces modernes et intuitives pour une meilleure expérience utilisateur.</span>
+				</div>
+
+				<div class="service-card reveal" data-reveal data-reveal-delay="140">
+					<span class="service-card__icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+					</span>
+					<span class="service-card__title">Applications métier</span>
+					<span class="service-card__desc">Des solutions adaptées à vos processus et à vos besoins spécifiques.</span>
+				</div>
+
+				<div class="service-card reveal" data-reveal data-reveal-delay="210">
+					<span class="service-card__icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+					</span>
+					<span class="service-card__title">Marketing digital</span>
+					<span class="service-card__desc">Stratégie digitale, SEO, réseaux sociaux et campagnes publicitaires.</span>
+				</div>
+
+				<div class="service-card reveal" data-reveal data-reveal-delay="280">
+					<span class="service-card__icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+					</span>
+					<span class="service-card__title">Hébergement &amp; Maintenance</span>
+					<span class="service-card__desc">Une infrastructure fiable et un suivi pour la performance et la sécurité.</span>
 				</div>
 			</div>
 		</div>
@@ -71,512 +140,135 @@
 	<!-- ===== Réalisations ===== -->
 	<section class="portfolio section-band" id="realisations">
 		<div class="container">
-			<p class="section-eyebrow reveal" data-reveal>Réalisations</p>
-			<h2 class="section-title reveal" data-reveal>Ce que nous avons construit</h2>
+			<div class="section-head reveal" data-reveal>
+				<div class="section-head__title">
+					<p class="section-eyebrow">Nos réalisations</p>
+					<h2 class="section-title">Des projets qui font la différence</h2>
+				</div>
+				<a href="#" class="link-arrow">Voir toutes les réalisations →</a>
+			</div>
 
 			<div class="portfolio-grid">
-				<article class="project-card project-card--feature reveal" data-reveal style="--project-accent: #e8542e;">
-					<div class="project-card__cover">
-						<svg viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-							<rect width="800" height="480" fill="currentColor"/>
-							<g opacity="0.16" fill="#ffffff">
-								<circle cx="90" cy="80" r="220"/>
-								<circle cx="740" cy="440" r="180"/>
-							</g>
-							<g transform="translate(150,90)">
-								<rect x="0" y="0" width="500" height="300" rx="14" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
-								<rect x="0" y="0" width="500" height="40" rx="14" fill="rgba(255,255,255,0.18)"/>
-								<circle cx="22" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<circle cx="40" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<circle cx="58" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<rect x="24" y="66" width="220" height="18" rx="4" fill="rgba(255,255,255,0.55)"/>
-								<rect x="24" y="96" width="320" height="12" rx="4" fill="rgba(255,255,255,0.3)"/>
-								<rect x="24" y="116" width="280" height="12" rx="4" fill="rgba(255,255,255,0.3)"/>
-								<rect x="24" y="150" width="130" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="168" y="150" width="130" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="312" y="150" width="164" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="24" y="256" width="120" height="26" rx="6" fill="rgba(255,255,255,0.45)"/>
-							</g>
-						</svg>
-					</div>
+				<article class="project-card reveal" data-reveal>
+					<div class="project-card__cover"><img src="assets/img/portfolio-v2/hetsika.png" alt="Hetsika"></div>
 					<div class="project-card__body">
-						<h3 class="project-card__title">Ticketevent</h3>
-						<p class="project-card__tagline">Billetterie événementielle en ligne</p>
-						<div class="project-card__gallery-row">
-							<div class="project-card__gallery-preview">
-								<img class="project-card__thumb" src="assets/img/portfolio/ticketevent/poster.jpg" alt="">
-								<span class="project-card__thumb"></span>
-								<span class="project-card__thumb"></span>
-							</div>
-							<span class="project-card__gallery-count">+1 captures</span>
-						</div>
-						<button type="button" class="project-card__link js-open-gallery" data-project="ticketevent">Voir la galerie →</button>
+						<h3 class="project-card__title">Hetsika</h3>
+						<p class="project-card__tagline">Plateforme de billetterie en ligne</p>
+						<div class="project-card__tags"><span>Symfony</span><span>React</span><span>Stripe</span></div>
 					</div>
 				</article>
 
-				<div class="portfolio-grid__row">
-					<article class="project-card reveal" data-reveal data-reveal-delay="90" style="--project-accent: #3f6df0;">
-						<div class="project-card__cover">
-						<svg viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-							<rect width="800" height="480" fill="currentColor"/>
-							<g opacity="0.16" fill="#ffffff">
-								<circle cx="90" cy="80" r="220"/>
-								<circle cx="740" cy="440" r="180"/>
-							</g>
-							<g transform="translate(150,90)">
-								<rect x="0" y="0" width="500" height="300" rx="14" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
-								<rect x="0" y="0" width="500" height="40" rx="14" fill="rgba(255,255,255,0.18)"/>
-								<circle cx="22" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<circle cx="40" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<circle cx="58" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<rect x="24" y="66" width="220" height="18" rx="4" fill="rgba(255,255,255,0.55)"/>
-								<rect x="24" y="96" width="320" height="12" rx="4" fill="rgba(255,255,255,0.3)"/>
-								<rect x="24" y="116" width="280" height="12" rx="4" fill="rgba(255,255,255,0.3)"/>
-								<rect x="24" y="150" width="130" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="168" y="150" width="130" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="312" y="150" width="164" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="24" y="256" width="120" height="26" rx="6" fill="rgba(255,255,255,0.45)"/>
-							</g>
-						</svg>
+				<article class="project-card reveal" data-reveal data-reveal-delay="80">
+					<div class="project-card__cover"><img src="assets/img/portfolio-v2/carfit.png" alt="Carfit"></div>
+					<div class="project-card__body">
+						<h3 class="project-card__title">Carfit</h3>
+						<p class="project-card__tagline">Site vitrine et prise de rendez-vous</p>
+						<div class="project-card__tags"><span>Symfony</span><span>Vue.js</span><span>API</span></div>
 					</div>
-						<div class="project-card__body">
-							<h3 class="project-card__title">Tapakila</h3>
-							<p class="project-card__tagline">Solution de billetterie &amp; gestion d'accès</p>
-							<div class="project-card__gallery-row">
-								<div class="project-card__gallery-preview">
-									<span class="project-card__thumb"></span>
-									<img class="project-card__thumb" src="assets/img/portfolio/tapakila/logo.png" alt="">
-									<span class="project-card__thumb"></span>
-								</div>
-								<span class="project-card__gallery-count">3 captures</span>
-							</div>
-							<button type="button" class="project-card__link js-open-gallery" data-project="tapakila">Voir la galerie →</button>
-						</div>
-					</article>
+				</article>
 
-					<article class="project-card reveal" data-reveal data-reveal-delay="180" style="--project-accent: #e8547a;">
-						<div class="project-card__cover">
-						<svg viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-							<rect width="800" height="480" fill="currentColor"/>
-							<g opacity="0.16" fill="#ffffff">
-								<circle cx="90" cy="80" r="220"/>
-								<circle cx="740" cy="440" r="180"/>
-							</g>
-							<g transform="translate(150,90)">
-								<rect x="0" y="0" width="500" height="300" rx="14" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
-								<rect x="0" y="0" width="500" height="40" rx="14" fill="rgba(255,255,255,0.18)"/>
-								<circle cx="22" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<circle cx="40" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<circle cx="58" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<rect x="24" y="66" width="220" height="18" rx="4" fill="rgba(255,255,255,0.55)"/>
-								<rect x="24" y="96" width="320" height="12" rx="4" fill="rgba(255,255,255,0.3)"/>
-								<rect x="24" y="116" width="280" height="12" rx="4" fill="rgba(255,255,255,0.3)"/>
-								<rect x="24" y="150" width="130" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="168" y="150" width="130" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="312" y="150" width="164" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="24" y="256" width="120" height="26" rx="6" fill="rgba(255,255,255,0.45)"/>
-							</g>
-						</svg>
+				<article class="project-card reveal" data-reveal data-reveal-delay="160">
+					<div class="project-card__cover"><img src="assets/img/portfolio-v2/mitoera.png" alt="Mitoera"></div>
+					<div class="project-card__body">
+						<h3 class="project-card__title">Mitoera</h3>
+						<p class="project-card__tagline">Application de réservation de sièges</p>
+						<div class="project-card__tags"><span>Nuxt.js</span><span>Tailwind</span><span>Realtime</span></div>
 					</div>
-						<div class="project-card__body">
-							<h3 class="project-card__title">Hetsika</h3>
-							<p class="project-card__tagline">Billetterie et découverte d'événements</p>
-							<div class="project-card__gallery-row">
-								<div class="project-card__gallery-preview">
-									<span class="project-card__thumb"></span>
-									<span class="project-card__thumb"></span>
-								</div>
-								<span class="project-card__gallery-count">2 captures</span>
-							</div>
-							<button type="button" class="project-card__link js-open-gallery" data-project="hetsika">Voir la galerie →</button>
-						</div>
-					</article>
+				</article>
 
-					<article class="project-card reveal" data-reveal data-reveal-delay="270" style="--project-accent: #4fb98a;">
-						<div class="project-card__cover">
-						<svg viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-							<rect width="800" height="480" fill="currentColor"/>
-							<g opacity="0.16" fill="#ffffff">
-								<circle cx="90" cy="80" r="220"/>
-								<circle cx="740" cy="440" r="180"/>
-							</g>
-							<g transform="translate(150,90)">
-								<rect x="0" y="0" width="500" height="300" rx="14" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
-								<rect x="0" y="0" width="500" height="40" rx="14" fill="rgba(255,255,255,0.18)"/>
-								<circle cx="22" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<circle cx="40" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<circle cx="58" cy="20" r="5" fill="rgba(255,255,255,0.5)"/>
-								<rect x="24" y="66" width="220" height="18" rx="4" fill="rgba(255,255,255,0.55)"/>
-								<rect x="24" y="96" width="320" height="12" rx="4" fill="rgba(255,255,255,0.3)"/>
-								<rect x="24" y="116" width="280" height="12" rx="4" fill="rgba(255,255,255,0.3)"/>
-								<rect x="24" y="150" width="130" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="168" y="150" width="130" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="312" y="150" width="164" height="90" rx="8" fill="rgba(255,255,255,0.22)"/>
-								<rect x="24" y="256" width="120" height="26" rx="6" fill="rgba(255,255,255,0.45)"/>
-							</g>
-						</svg>
+				<article class="project-card reveal" data-reveal data-reveal-delay="240">
+					<div class="project-card__cover"><img src="assets/img/portfolio-v2/irytech.png" alt="Irytech"></div>
+					<div class="project-card__body">
+						<h3 class="project-card__title">Irytech</h3>
+						<p class="project-card__tagline">Site institutionnel de l'agence</p>
+						<div class="project-card__tags"><span>Next.js</span><span>Tailwind</span><span>SEO</span></div>
 					</div>
-						<div class="project-card__body">
-							<h3 class="project-card__title">Mitoera</h3>
-							<p class="project-card__tagline">Billetterie &amp; plans de salle interactifs</p>
-							<div class="project-card__gallery-row">
-								<div class="project-card__gallery-preview">
-									<span class="project-card__thumb"></span>
-									<span class="project-card__thumb"></span>
-								</div>
-								<span class="project-card__gallery-count">2 captures</span>
-							</div>
-							<button type="button" class="project-card__link js-open-gallery" data-project="mitoera">Voir la galerie →</button>
-						</div>
-					</article>
-				</div>
+				</article>
 			</div>
 		</div>
-
-		<!-- Lightbox galerie front / back-office -->
-		<div class="gallery-modal" id="gallery-modal" aria-hidden="true">
-			<div class="gallery-modal__backdrop js-close-gallery"></div>
-			<div class="gallery-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">
-				<button type="button" class="gallery-modal__close js-close-gallery" aria-label="Fermer">&times;</button>
-				<h3 class="gallery-modal__title" id="gallery-modal-title"></h3>
-				<div class="gallery-modal__tabs" data-active="front">
-					<span class="gallery-modal__tab-thumb" aria-hidden="true"></span>
-					<button type="button" class="gallery-modal__tab is-active" data-tab="front">Front-end</button>
-					<button type="button" class="gallery-modal__tab" data-tab="bo">Back-office</button>
-				</div>
-				<div class="gallery-modal__track" id="gallery-modal-track"></div>
-			</div>
-		</div>
-
-		<script type="application/json" id="irytech-portfolio-data">
-		[
-			{
-				"slug": "ticketevent",
-				"name": "Ticketevent",
-				"tagline": "Billetterie événementielle en ligne",
-				"gallery": {
-					"front": [
-						{ "label": "Page d'accueil", "image": "ticketevent/poster.jpg" },
-						{ "label": "Fiche événement", "image": "" }
-					],
-					"bo": [
-						{ "label": "Connexion organisateur", "image": "" },
-						{ "label": "Tableau de bord", "image": "" }
-					]
-				}
-			},
-			{
-				"slug": "tapakila",
-				"name": "Tapakila",
-				"tagline": "Solution de billetterie & gestion d'accès",
-				"gallery": {
-					"front": [
-						{ "label": "Page d'accueil", "image": "" }
-					],
-					"bo": [
-						{ "label": "Connexion back-office", "image": "tapakila/logo.png" },
-						{ "label": "Gestion des événements", "image": "" }
-					]
-				}
-			},
-			{
-				"slug": "hetsika",
-				"name": "Hetsika",
-				"tagline": "Billetterie et découverte d'événements",
-				"gallery": {
-					"front": [
-						{ "label": "Page d'accueil", "image": "" }
-					],
-					"bo": [
-						{ "label": "Back-office", "image": "" }
-					]
-				}
-			},
-			{
-				"slug": "mitoera",
-				"name": "Mitoera",
-				"tagline": "Billetterie & plans de salle interactifs",
-				"gallery": {
-					"front": [
-						{ "label": "Page d'accueil", "image": "" }
-					],
-					"bo": [
-						{ "label": "Back-office", "image": "" }
-					]
-				}
-			}
-		]
-		</script>
 	</section>
 
-	<!-- ===== Domaine technique ===== -->
-	<section class="expertise section-band" id="expertise">
+	<!-- ===== Stats ===== -->
+	<section class="stats">
 		<div class="container">
-			<p class="section-eyebrow reveal" data-reveal>Domaine technique</p>
-			<h2 class="section-title reveal" data-reveal>Notre champ d'action</h2>
-
-			<div class="expertise-grid">
-				<div class="expertise-tile reveal" data-reveal>
-					<span class="expertise-tile__icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="#c94163" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-						</svg>
+			<div class="stats-grid reveal" data-reveal>
+				<div class="stat-card">
+					<span class="stat-card__icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
 					</span>
-					<span class="expertise-tile__title">Développement web</span>
-					<span class="expertise-tile__desc">Sites et plateformes sur-mesure.</span>
+					<div><div class="stat-card__num">+10</div><div class="stat-card__label">Années d'expérience</div></div>
 				</div>
-
-				<div class="expertise-tile reveal" data-reveal data-reveal-delay="70">
-					<span class="expertise-tile__icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="#c94163" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
-						</svg>
+				<div class="stat-card">
+					<span class="stat-card__icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
 					</span>
-					<span class="expertise-tile__title">Applications métier</span>
-					<span class="expertise-tile__desc">Outils internes &amp; back-office.</span>
+					<div><div class="stat-card__num">+50</div><div class="stat-card__label">Projets réalisés</div></div>
 				</div>
-
-				<div class="expertise-tile reveal" data-reveal data-reveal-delay="140">
-					<span class="expertise-tile__icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="#c94163" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 11v2M13 17v2"/>
-						</svg>
+				<div class="stat-card">
+					<span class="stat-card__icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 21-3-3m0 0a2 2 0 1 0-3-3 2 2 0 0 0 3 3z"/></svg>
 					</span>
-					<span class="expertise-tile__title">Billetterie &amp; e-commerce</span>
-					<span class="expertise-tile__desc">Paiement, réservation, gestion.</span>
+					<div><div class="stat-card__num">+30</div><div class="stat-card__label">Clients satisfaits</div></div>
 				</div>
-
-				<div class="expertise-tile reveal" data-reveal data-reveal-delay="210">
-					<span class="expertise-tile__icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="#c94163" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-						</svg>
+				<div class="stat-card">
+					<span class="stat-card__icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
 					</span>
-					<span class="expertise-tile__title">API &amp; intégrations</span>
-					<span class="expertise-tile__desc">Connecter vos outils entre eux.</span>
-				</div>
-
-				<div class="expertise-tile reveal" data-reveal data-reveal-delay="280">
-					<span class="expertise-tile__icon">
-						<svg viewBox="0 0 24 24" fill="none" stroke="#c94163" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
-						</svg>
-					</span>
-					<span class="expertise-tile__title">Infrastructure &amp; déploiement</span>
-					<span class="expertise-tile__desc">Docker, cloud, mise en production.</span>
+					<div><div class="stat-card__num">100%</div><div class="stat-card__label">Engagement qualité</div></div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- ===== Contact ===== -->
-	<section class="contact section-band" id="contact">
-		<span class="contact__glow" aria-hidden="true"></span>
-
-		<div class="container contact__inner">
-			<div class="contact__intro reveal" data-reveal>
-				<p class="section-eyebrow">Contact</p>
-				<h2 class="section-title">Discutons de votre projet.</h2>
-				<a href="mailto:gtody.rabekoto@gmail.com" class="contact__email">gtody.rabekoto@gmail.com</a>
-
-				<a href="https://wa.me/261385080588" target="_blank" rel="noopener" class="whatsapp-btn">
-					<svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
-						<path d="M12.02 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.33 5l-1.42 5.18 5.31-1.39a9.93 9.93 0 0 0 4.74 1.21h.01c5.5 0 9.96-4.46 9.96-9.96S17.52 2 12.02 2Zm5.83 14.16c-.25.7-1.24 1.28-2.02 1.44-.54.11-1.24.2-3.6-.77-2.98-1.23-4.9-4.26-5.05-4.46-.15-.2-1.21-1.61-1.21-3.07 0-1.46.76-2.18 1.03-2.48.27-.3.59-.37.78-.37h.56c.18 0 .43-.07.67.51.25.6.85 2.06.92 2.21.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.32.4-.45.53-.15.15-.31.32-.13.62.18.3.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.48 1.53.3.15.48.13.65-.08.18-.2.76-.89.97-1.19.2-.3.4-.25.68-.15.28.1 1.75.83 2.05 .98.3.15.5.23.57.35.08.13.08.72-.17 1.42Z"/>
-					</svg>
-					<span>WhatsApp — +261 38 508 05 88</span>
-				</a>
-			</div>
-
-			<form class="contact-form reveal" id="contact-form" data-reveal data-reveal-delay="150" novalidate>
-				<div class="contact-form__row">
-					<label for="cf-name">Nom</label>
-					<input type="text" id="cf-name" name="name" required autocomplete="name">
-				</div>
-
-				<div class="contact-form__row">
-					<label for="cf-email">E-mail</label>
-					<input type="email" id="cf-email" name="email" required autocomplete="email">
-				</div>
-
-				<div class="contact-form__row">
-					<label for="cf-message">Message</label>
-					<textarea id="cf-message" name="message" rows="4" required></textarea>
-				</div>
-
-				<!-- Honeypot anti-spam -->
-				<div class="contact-form__honeypot" aria-hidden="true">
-					<label for="cf-website">Site web</label>
-					<input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
-				</div>
-
-				<div class="contact-form__row">
-					<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
-				</div>
-
-				<button type="submit" class="btn btn--primary contact-form__submit">
-					<span class="contact-form__submit-label">Envoyer le message</span>
-				</button>
-
-				<p class="contact-form__feedback" id="contact-form-feedback" role="status" aria-live="polite"></p>
-			</form>
-		</div>
-	</section>
-
-	<!-- ===== Avis clients ===== -->
-	<section class="testimonials section-band" id="avis">
+	<!-- ===== Pourquoi Irytech ===== -->
+	<section class="why section-band" id="apropos">
 		<div class="container">
-			<p class="section-eyebrow reveal" data-reveal>Avis clients</p>
-			<h2 class="section-title reveal" data-reveal>Ce que nos clients en disent</h2>
-		</div>
-
-		<div class="testimonial-track-wrap reveal" data-reveal data-reveal-delay="120">
-			<div class="testimonial-track">
-				<div class="testimonial-card">
-					<div class="testimonial-card__stars" aria-hidden="true"><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span></div>
-					<p class="testimonial-card__text">« L'équipe a compris nos besoins dès le premier échange. Notre plateforme tourne sans accroc. »</p>
-					<div class="testimonial-card__author">
-						<span class="testimonial-card__avatar">N</span>
-						<div><strong>Njaka Rakoto</strong><span>Organisateur événementiel</span></div>
-					</div>
-				</div>
-				<div class="testimonial-card">
-					<div class="testimonial-card__stars" aria-hidden="true"><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span></div>
-					<p class="testimonial-card__text">« Un vrai sens du détail sur le design comme sur la technique. Délais respectés du début à la fin. »</p>
-					<div class="testimonial-card__author">
-						<span class="testimonial-card__avatar">H</span>
-						<div><strong>Hanitra Andrianasolo</strong><span>Directrice marketing</span></div>
-					</div>
-				</div>
-				<div class="testimonial-card">
-					<div class="testimonial-card__stars" aria-hidden="true"><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span></div>
-					<p class="testimonial-card__text">« Accompagnés de l'idée au produit fini, avec un back-office pensé pour notre équipe. »</p>
-					<div class="testimonial-card__author">
-						<span class="testimonial-card__avatar">F</span>
-						<div><strong>Fetra Randria</strong><span>Fondateur de start-up</span></div>
-					</div>
-				</div>
-				<div class="testimonial-card">
-					<div class="testimonial-card__stars" aria-hidden="true"><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span></div>
-					<p class="testimonial-card__text">« Interface fluide, animations soignées, et une équipe toujours disponible pour les ajustements. »</p>
-					<div class="testimonial-card__author">
-						<span class="testimonial-card__avatar">M</span>
-						<div><strong>Miora Rasoanaivo</strong><span>Responsable digital</span></div>
-					</div>
-				</div>
-				<!-- Duplication pour le défilement continu -->
-				<div class="testimonial-card">
-					<div class="testimonial-card__stars" aria-hidden="true"><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span></div>
-					<p class="testimonial-card__text">« L'équipe a compris nos besoins dès le premier échange. Notre plateforme tourne sans accroc. »</p>
-					<div class="testimonial-card__author">
-						<span class="testimonial-card__avatar">N</span>
-						<div><strong>Njaka Rakoto</strong><span>Organisateur événementiel</span></div>
-					</div>
-				</div>
-				<div class="testimonial-card">
-					<div class="testimonial-card__stars" aria-hidden="true"><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span></div>
-					<p class="testimonial-card__text">« Un vrai sens du détail sur le design comme sur la technique. Délais respectés du début à la fin. »</p>
-					<div class="testimonial-card__author">
-						<span class="testimonial-card__avatar">H</span>
-						<div><strong>Hanitra Andrianasolo</strong><span>Directrice marketing</span></div>
-					</div>
-				</div>
-				<div class="testimonial-card">
-					<div class="testimonial-card__stars" aria-hidden="true"><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span></div>
-					<p class="testimonial-card__text">« Accompagnés de l'idée au produit fini, avec un back-office pensé pour notre équipe. »</p>
-					<div class="testimonial-card__author">
-						<span class="testimonial-card__avatar">F</span>
-						<div><strong>Fetra Randria</strong><span>Fondateur de start-up</span></div>
-					</div>
-				</div>
-				<div class="testimonial-card">
-					<div class="testimonial-card__stars" aria-hidden="true"><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span><span class="is-filled">★</span></div>
-					<p class="testimonial-card__text">« Interface fluide, animations soignées, et une équipe toujours disponible pour les ajustements. »</p>
-					<div class="testimonial-card__author">
-						<span class="testimonial-card__avatar">M</span>
-						<div><strong>Miora Rasoanaivo</strong><span>Responsable digital</span></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ===== Clients ===== -->
-	<section class="clients" id="clients">
-		<div class="container">
-			<p class="clients__eyebrow reveal" data-reveal>Ils nous font confiance</p>
-		</div>
-
-		<div class="clients__track-wrap">
-			<div class="clients__track">
-				<span class="clients__logo">NovaCorp</span>
-				<span class="clients__logo">Andriana Group</span>
-				<span class="clients__logo">Baobab Retail</span>
-				<span class="clients__logo">Malaza Tech</span>
-				<span class="clients__logo">Firaisana Bank</span>
-				<span class="clients__logo">Zaza Media</span>
-				<span class="clients__logo">NovaCorp</span>
-				<span class="clients__logo">Andriana Group</span>
-				<span class="clients__logo">Baobab Retail</span>
-				<span class="clients__logo">Malaza Tech</span>
-				<span class="clients__logo">Firaisana Bank</span>
-				<span class="clients__logo">Zaza Media</span>
-			</div>
-		</div>
-	</section>
-
-	<!-- ===== Localisation ===== -->
-	<section class="location section-band" id="localisation">
-		<div class="container">
-			<p class="section-eyebrow reveal" data-reveal>Localisation</p>
-			<h2 class="section-title reveal" data-reveal>Où nous trouver</h2>
-
-			<div class="location__row reveal" data-reveal data-reveal-delay="120">
-				<div class="location__info">
-					<p class="location__text">
-						Basés à Fiofio, Mahajanga, nous accompagnons des clients partout à Madagascar et à l'international, en présentiel ou à distance.
+			<div class="why__grid">
+				<div class="why__intro reveal" data-reveal>
+					<p class="section-eyebrow">Pourquoi Irytech ?</p>
+					<h2 class="section-title">Plus qu'une agence, un partenaire de confiance</h2>
+					<p class="why__text">
+						Nous croyons en la puissance du digital pour créer de la valeur. C'est pourquoi nous mettons notre expertise, notre créativité et notre engagement au service de votre réussite.
 					</p>
-
-					<div class="location__row-item">
-						<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-							<path d="M12 22s7-7.58 7-12.5S16.14 2 12 2 5 4.96 5 9.5 12 22 12 22Z" fill="#c94163"/>
-							<circle cx="12" cy="9.5" r="3" fill="#fff"/>
-						</svg>
-						<span>Fiofio, Mahajanga, Madagascar</span>
-					</div>
-
-					<div class="location__row-item">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-							<circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/>
-						</svg>
-						<span>Lun – Ven · 9h00 – 18h00</span>
-					</div>
-
-					<a href="https://www.google.com/maps/search/?api=1&query=Fiofio%2C+Mahajanga%2C+Madagascar" target="_blank" rel="noopener" class="btn btn--outline-light">
-						Voir sur Google Maps ↗
-					</a>
+					<a href="#contact" class="btn btn--outline-dark" style="align-self:flex-start;">En savoir plus →</a>
 				</div>
 
-				<div class="map-card" aria-hidden="true">
-					<span class="map-card__road map-card__road--h1"></span>
-					<span class="map-card__road map-card__road--h2"></span>
-					<span class="map-card__road map-card__road--v1"></span>
-					<span class="map-card__road map-card__road--v2"></span>
-					<span class="map-card__road map-card__road--diag"></span>
-
-					<span class="map-card__block" style="left:6%; top:11%; width:60px; height:34px;"></span>
-					<span class="map-card__block" style="left:26%; top:72%; width:90px; height:50px;"></span>
-					<span class="map-card__block" style="left:77%; top:14%; width:70px; height:40px;"></span>
-					<span class="map-card__block" style="left:81%; top:72%; width:60px; height:60px;"></span>
-					<span class="map-card__block" style="left:45%; top:11%; width:50px; height:30px;"></span>
-
-					<span class="map-card__pin-glow"></span>
-					<svg class="map-card__pin" viewBox="0 0 24 24" fill="none">
-						<path d="M12 22s7-7.58 7-12.5S16.14 2 12 2 5 4.96 5 9.5 12 22 12 22Z" fill="#c94163"/>
-						<circle cx="12" cy="9.5" r="3.2" fill="#fff"/>
-					</svg>
-
-					<span class="map-card__chip">Irytech — Fiofio, Mahajanga</span>
+				<div class="why__list reveal" data-reveal data-reveal-delay="100">
+					<div class="why__item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+						Une équipe passionnée et réactive
+					</div>
+					<div class="why__item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+						Des technologies modernes et évolutives
+					</div>
+					<div class="why__item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+						Un accompagnement personnalisé de A à Z
+					</div>
+					<div class="why__item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+						Une livraison dans les délais
+					</div>
 				</div>
+
+				<div class="why__photo reveal" data-reveal data-reveal-delay="200">
+					<img src="assets/img/about/office.png" alt="Bureaux Irytech">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ===== CTA ===== -->
+	<section class="cta" id="contact">
+		<div class="container cta__inner reveal" data-reveal>
+			<p class="section-eyebrow">Prêt à donner vie à votre projet ?</p>
+			<h2 class="cta__title">Échangeons sur vos idées !</h2>
+			<p class="cta__text">
+				Nous sommes à votre écoute pour discuter de votre projet et vous proposer la meilleure solution.
+			</p>
+			<div class="cta__actions">
+				<a href="mailto:gtody.rabekoto@gmail.com" class="btn btn--primary">Nous contacter →</a>
 			</div>
 		</div>
 	</section>
@@ -584,29 +276,44 @@
 </main>
 
 <footer class="site-footer">
-	<div class="container site-footer__inner">
-		<span class="site-logo">
-			<img src="assets/img/brand/logo.png" alt="Irytech" class="site-logo__img">
-		</span>
-
-		<nav class="site-footer__nav" aria-label="Navigation pied de page">
-			<a href="#realisations">Réalisations</a>
-			<a href="#expertise">Domaine technique</a>
-			<a href="#contact">Contact</a>
-			<a href="#avis">Avis clients</a>
-		</nav>
-	</div>
-
 	<div class="container">
+		<div class="site-footer__top">
+			<div class="site-footer__brand">
+				<span class="site-logo">
+					<img src="assets/img/brand/logo.png" alt="Irytech" class="site-logo__img">
+				</span>
+				<span class="site-footer__tagline">Agence digitale</span>
+			</div>
+
+			<nav class="site-footer__nav" aria-label="Navigation pied de page">
+				<a href="#hero">Accueil</a>
+				<a href="#services">Services</a>
+				<a href="#realisations">Réalisations</a>
+				<a href="#apropos">À propos</a>
+				<a href="#contact">Contact</a>
+			</nav>
+
+			<div class="site-footer__social">
+				<a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg></a>
+				<a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3H13.5V8.4c0-.87.24-1.46 1.5-1.46h1.6V4.28C16.3 4.19 15.32 4 14.2 4c-2.34 0-3.95 1.43-3.95 4.04v2.46H7.75v3h2.5V21h3.25Z"/></svg></a>
+				<a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></a>
+				<a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.41-4.74a2.5 2.5 0 0 0-1.76-1.77C18.3 5.08 12 5.08 12 5.08s-6.3 0-7.83.41a2.5 2.5 0 0 0-1.76 1.77C2 8.8 2 12 2 12s0 3.2.41 4.74a2.5 2.5 0 0 0 1.76 1.77c1.53.41 7.83.41 7.83.41s6.3 0 7.83-.41a2.5 2.5 0 0 0 1.76-1.77C22 15.2 22 12 22 12Zm-11.9 3.19V8.81L15.5 12l-5.4 3.19Z"/></svg></a>
+			</div>
+		</div>
+
 		<div class="site-footer__divider"></div>
+
 		<div class="site-footer__bottom">
 			<p>&copy; <span id="footer-year">2026</span> Irytech. Tous droits réservés.</p>
-			<a href="mailto:gtody.rabekoto@gmail.com">gtody.rabekoto@gmail.com</a>
+			<p class="site-footer__location">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+				Fiofio, Mahajanga, Madagascar · Luxembourg (partenaire)
+			</p>
+			<p>Des idées aujourd'hui, des solutions pour demain.</p>
 		</div>
 	</div>
 </footer>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="assets/js/main.js"></script>
 <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
