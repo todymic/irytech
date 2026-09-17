@@ -183,11 +183,11 @@ svg { display: block; }
 	align-items: center;
 }
 .site-logo__img {
-	height: 46px;
+	height: 125px;
 	width: auto;
 	object-fit: contain;
 }
-.site-footer .site-logo__img { height: 40px; }
+.site-footer .site-logo__img { height: 125px; }
 
 .site-nav {
 	display: flex;
@@ -678,4 +678,62 @@ section { position: relative; }
 	.section-band { padding: 76px 0; }
 	.site-footer__top { flex-direction: column; }
 	.site-footer__bottom { flex-direction: column; align-items: flex-start; }
+}
+
+
+/* ========================================
+	Portfolio - Project links
+	======================================== */
+
+.project-card__link {
+	display: block;
+	height: 100%;
+	color: inherit;
+	text-decoration: none;
+}
+
+.project-card__link .project-card__body {
+	position: relative;
+}
+
+.project-card__visit {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 16px;
+
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: var(--color-primary);
+
+	transition:
+			gap 0.25s ease,
+			color 0.25s ease;
+}
+
+.project-card__visit span {
+	display: inline-flex;
+	font-size: 1rem;
+	transition: transform 0.25s ease;
+}
+
+.project-card:hover .project-card__visit {
+	gap: 10px;
+}
+
+.project-card:hover .project-card__visit span {
+	transform: translate(2px, -2px);
+}
+
+/* Effet subtil sur l'image */
+.project-card__link .project-card__cover {
+	overflow: hidden;
+}
+
+.project-card__link .project-card__cover img {
+	transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card__link .project-card__cover img {
+	transform: scale(1.04);
 }
