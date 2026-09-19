@@ -8,10 +8,16 @@ header( 'Content-Type: application/json; charset=utf-8' );
 
 define( 'IRYTECH_CONTACT_EMAIL', 'contact@irytech.net' );
 
-// Remplacez par votre vraie clé secrète reCAPTCHA v3 (obtenue sur
-// https://www.google.com/recaptcha/admin/create, type "v3", même domaine que
-// la clé de site utilisée dans index.html).
-define( 'IRYTECH_RECAPTCHA_SECRET_KEY', 'RECAPTCHA_V3_SECRET_KEY' );
+// La vraie clé secrète reCAPTCHA v3 vit dans config.local.php, un fichier non
+// versionné (voir .gitignore) — ce dépôt est public, elle ne doit jamais y
+// apparaître. Sans ce fichier, le formulaire reste utilisable, protégé
+// uniquement par le honeypot (voir irytech_verify_recaptcha ci-dessous).
+if ( is_readable( __DIR__ . '/config.local.php' ) ) {
+	require __DIR__ . '/config.local.php';
+}
+if ( ! defined( 'IRYTECH_RECAPTCHA_SECRET_KEY' ) ) {
+	define( 'IRYTECH_RECAPTCHA_SECRET_KEY', 'RECAPTCHA_V3_SECRET_KEY' );
+}
 
 // Score minimal accepté (0.0 = probablement un bot, 1.0 = probablement humain).
 define( 'IRYTECH_RECAPTCHA_MIN_SCORE', 0.5 );
