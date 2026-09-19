@@ -622,7 +622,7 @@ section { position: relative; }
 	transition: background 0.3s, border-color 0.3s;
 }
 .contact__method-icon svg { width: 18px; height: 18px; }
-.contact__method:hover .contact__method-icon { background: var(--rose); border-color: var(--rose); }
+.contact__method:hover .contact__method-icon { background: var(--rose); border-color: var(--rose); color: #ffffff; }
 .contact__method-icon--whatsapp svg { width: 19px; height: 19px; }
 
 .contact-form {
@@ -637,6 +637,8 @@ section { position: relative; }
 }
 .contact-form__row { display: flex; flex-direction: column; gap: 8px; }
 .contact-form__row label { font-size: 0.8rem; font-weight: 500; color: var(--dark-text-dim); }
+.contact-form__required { color: var(--rose); }
+.contact-form__required-note { font-size: 0.76rem; color: var(--text-dimmer); margin-top: -6px; }
 .contact-form__row input,
 .contact-form__row textarea {
 	background: var(--navy);
