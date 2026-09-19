@@ -93,12 +93,25 @@ if ( $recaptcha_configured && ( empty( $recaptcha_token ) || ! irytech_verify_re
 	irytech_json_response( false, "La vérification anti-spam a échoué. Merci de réessayer." );
 }
 
-$name    = trim( strip_tags( $_POST['name'] ?? '' ) );
-$email   = filter_var( trim( $_POST['email'] ?? '' ), FILTER_VALIDATE_EMAIL );
-$message = trim( strip_tags( $_POST['message'] ?? '' ) );
+$name         = trim( strip_tags( $_POST['name'] ?? '' ) );
+$email_raw    = trim( $_POST['email'] ?? '' );
+$email        = filter_var( $email_raw, FILTER_VALIDATE_EMAIL );
+$message      = trim( strip_tags( $_POST['message'] ?? '' ) );
 
-if ( empty( $name ) || ! $email || empty( $message ) ) {
-	irytech_json_response( false, 'Merci de remplir tous les champs avec une adresse e-mail valide.' );
+if ( empty( $name ) ) {
+	irytech_json_response( false, 'Merci d’indiquer votre nom.' );
+}
+
+if ( empty( $email_raw ) ) {
+	irytech_json_response( false, 'Merci d’indiquer votre e-mail.' );
+}
+
+if ( ! $email ) {
+	irytech_json_response( false, 'Cette adresse e-mail n’est pas valide.' );
+}
+
+if ( empty( $message ) ) {
+	irytech_json_response( false, 'Merci d’écrire un message.' );
 }
 
 $subject = sprintf( '[Site Irytech] Nouveau message de %s', $name );

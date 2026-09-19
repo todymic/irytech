@@ -90,10 +90,77 @@
 		} );
 	}
 
-	/* ---------- Contact form (reCAPTCHA v3 + AJAX) ---------- */
+	/* ---------- Contact form (validation + reCAPTCHA v3 + AJAX) ---------- */
 	var CONTACT_ENDPOINT = 'contact.php';
 	var form = document.getElementById( 'contact-form' );
 	var feedback = document.getElementById( 'contact-form-feedback' );
+	var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+	function setFieldError( input, message ) {
+		var row = input.closest( '.contact-form__row' );
+		var errorEl = document.getElementById( input.id + '-error' );
+		if ( message ) {
+			if ( row ) row.classList.add( 'has-error' );
+			if ( errorEl ) errorEl.textContent = message;
+		} else {
+			if ( row ) row.classList.remove( 'has-error' );
+			if ( errorEl ) errorEl.textContent = '';
+		}
+	}
+
+	function validateContactForm() {
+		if ( ! form ) return true;
+
+		var nameEl = form.elements.name;
+		var emailEl = form.elements.email;
+		var messageEl = form.elements.message;
+		var firstInvalid = null;
+		var isValid = true;
+
+		var name = nameEl.value.trim();
+		if ( ! name ) {
+			setFieldError( nameEl, 'Merci d’indiquer votre nom.' );
+			isValid = false;
+			firstInvalid = firstInvalid || nameEl;
+		} else {
+			setFieldError( nameEl, '' );
+		}
+
+		var email = emailEl.value.trim();
+		if ( ! email ) {
+			setFieldError( emailEl, 'Merci d’indiquer votre e-mail.' );
+			isValid = false;
+			firstInvalid = firstInvalid || emailEl;
+		} else if ( ! EMAIL_PATTERN.test( email ) ) {
+			setFieldError( emailEl, 'Cette adresse e-mail n’est pas valide.' );
+			isValid = false;
+			firstInvalid = firstInvalid || emailEl;
+		} else {
+			setFieldError( emailEl, '' );
+		}
+
+		var message = messageEl.value.trim();
+		if ( ! message ) {
+			setFieldError( messageEl, 'Merci d’écrire un message.' );
+			isValid = false;
+			firstInvalid = firstInvalid || messageEl;
+		} else {
+			setFieldError( messageEl, '' );
+		}
+
+		if ( firstInvalid ) {
+			firstInvalid.focus();
+		}
+
+		return isValid;
+	}
+
+	if ( form ) {
+		[ 'name', 'email', 'message' ].forEach( function ( fieldName ) {
+			var el = form.elements[ fieldName ];
+			el.addEventListener( 'input', function () { setFieldError( el, '' ); } );
+		} );
+	}
 
 	function getRecaptchaToken() {
 		var siteKey = window.IRYTECH_RECAPTCHA_SITE_KEY;
@@ -127,10 +194,17 @@
 		form.addEventListener( 'submit', function ( e ) {
 			e.preventDefault();
 
-			var submitBtn = form.querySelector( '.contact-form__submit' );
-			submitBtn.classList.add( 'is-loading' );
 			feedback.textContent = '';
 			feedback.className = 'contact-form__feedback';
+
+			if ( ! validateContactForm() ) {
+				feedback.textContent = 'Merci de corriger les champs indiqués ci-dessus avant d’envoyer votre message.';
+				feedback.classList.add( 'is-error' );
+				return;
+			}
+
+			var submitBtn = form.querySelector( '.contact-form__submit' );
+			submitBtn.classList.add( 'is-loading' );
 
 			getRecaptchaToken()
 				.then( function ( token ) {

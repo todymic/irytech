@@ -657,6 +657,20 @@ section { position: relative; }
 	border-color: var(--rose);
 	box-shadow: 0 0 0 3px rgba(201, 65, 99, 0.25);
 }
+.contact-form__row.has-error input,
+.contact-form__row.has-error textarea {
+	border-color: #ff6b6b;
+}
+.contact-form__row.has-error input:focus,
+.contact-form__row.has-error textarea:focus {
+	box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.25);
+}
+.contact-form__error {
+	display: none;
+	font-size: 0.78rem;
+	color: #ff8a8a;
+}
+.contact-form__row.has-error .contact-form__error { display: block; }
 .contact-form__honeypot { position: absolute; left: -9999px; opacity: 0; }
 .contact-form__submit {
 	margin-top: 2px;
