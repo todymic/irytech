@@ -1,16 +1,20 @@
 <?php
 /**
  * Traitement autonome du formulaire de contact (sans WordPress).
- * Envoie un e-mail à l'adresse de la société via PHP mail().
+ * Vérifie reCAPTCHA v3 (score) puis envoie un e-mail via PHP mail().
  */
 
 header( 'Content-Type: application/json; charset=utf-8' );
 
-define( 'IRYTECH_CONTACT_EMAIL', 'gtody.rabekoto@gmail.com' );
+define( 'IRYTECH_CONTACT_EMAIL', 'contact@irytech.net' );
 
-// Clés de test officielles Google (valident toujours) — à remplacer par vos vraies clés avant la mise en production.
-// https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha-v2-what-should-i-do
-define( 'IRYTECH_RECAPTCHA_SECRET_KEY', '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe' );
+// Remplacez par votre vraie clé secrète reCAPTCHA v3 (obtenue sur
+// https://www.google.com/recaptcha/admin/create, type "v3", même domaine que
+// la clé de site utilisée dans index.html).
+define( 'IRYTECH_RECAPTCHA_SECRET_KEY', 'RECAPTCHA_V3_SECRET_KEY' );
+
+// Score minimal accepté (0.0 = probablement un bot, 1.0 = probablement humain).
+define( 'IRYTECH_RECAPTCHA_MIN_SCORE', 0.5 );
 
 function irytech_json_response( $success, $message ) {
 	echo json_encode( array( 'success' => $success, 'message' => $message ) );
@@ -18,6 +22,13 @@ function irytech_json_response( $success, $message ) {
 }
 
 function irytech_verify_recaptcha( $token ) {
+	// Tant que la vraie clé secrète n'a pas été configurée, on n'appelle pas
+	// l'API Google (elle rejetterait tout) : le formulaire reste utilisable,
+	// protégé uniquement par le honeypot, en attendant la vraie clé.
+	if ( IRYTECH_RECAPTCHA_SECRET_KEY === 'RECAPTCHA_V3_SECRET_KEY' ) {
+		return true;
+	}
+
 	$ch = curl_init( 'https://www.google.com/recaptcha/api/siteverify' );
 	curl_setopt_array(
 		$ch,
@@ -42,7 +53,19 @@ function irytech_verify_recaptcha( $token ) {
 	}
 
 	$data = json_decode( $body, true );
-	return ! empty( $data['success'] );
+
+	if ( empty( $data['success'] ) ) {
+		return false;
+	}
+
+	// action doit correspondre à celle envoyée par grecaptcha.execute() côté JS.
+	if ( isset( $data['action'] ) && $data['action'] !== 'contact' ) {
+		return false;
+	}
+
+	$score = isset( $data['score'] ) ? (float) $data['score'] : 0.0;
+
+	return $score >= IRYTECH_RECAPTCHA_MIN_SCORE;
 }
 
 if ( $_SERVER['REQUEST_METHOD'] !== 'POST' ) {
@@ -54,10 +77,14 @@ if ( ! empty( $_POST['website'] ) ) {
 	irytech_json_response( true, 'Votre message a bien été envoyé, merci !' );
 }
 
-$recaptcha_token = trim( $_POST['g-recaptcha-response'] ?? '' );
+$recaptcha_token = trim( $_POST['recaptcha_token'] ?? '' );
 
-if ( empty( $recaptcha_token ) || ! irytech_verify_recaptcha( $recaptcha_token ) ) {
-	irytech_json_response( false, "Merci de valider le reCAPTCHA avant d'envoyer votre message." );
+// Tant que la vraie clé secrète n'est pas configurée, aucun token n'est même
+// envoyé par le JS (voir main.js) : on ne bloque pas l'envoi dans ce cas.
+$recaptcha_configured = IRYTECH_RECAPTCHA_SECRET_KEY !== 'RECAPTCHA_V3_SECRET_KEY';
+
+if ( $recaptcha_configured && ( empty( $recaptcha_token ) || ! irytech_verify_recaptcha( $recaptcha_token ) ) ) {
+	irytech_json_response( false, "La vérification anti-spam a échoué. Merci de réessayer." );
 }
 
 $name    = trim( strip_tags( $_POST['name'] ?? '' ) );

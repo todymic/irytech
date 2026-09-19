@@ -89,4 +89,76 @@
 			el.classList.add( 'is-visible' );
 		} );
 	}
+
+	/* ---------- Contact form (reCAPTCHA v3 + AJAX) ---------- */
+	var CONTACT_ENDPOINT = 'contact.php';
+	var form = document.getElementById( 'contact-form' );
+	var feedback = document.getElementById( 'contact-form-feedback' );
+
+	function getRecaptchaToken() {
+		var siteKey = window.IRYTECH_RECAPTCHA_SITE_KEY;
+		var isPlaceholder = ! siteKey || siteKey.indexOf( 'RECAPTCHA_V3_SITE_KEY' ) !== -1;
+
+		if ( isPlaceholder || typeof grecaptcha === 'undefined' ) {
+			return Promise.resolve( '' );
+		}
+
+		return new Promise( function ( resolve ) {
+			// Filet de sécurité : si reCAPTCHA ne répond jamais (clé invalide, réseau bloqué),
+			// on n'empêche pas l'envoi du message indéfiniment.
+			var settled = false;
+			var timeout = setTimeout( function () {
+				if ( ! settled ) { settled = true; resolve( '' ); }
+			}, 6000 );
+
+			grecaptcha.ready( function () {
+				grecaptcha.execute( siteKey, { action: 'contact' } )
+					.then( function ( token ) {
+						if ( ! settled ) { settled = true; clearTimeout( timeout ); resolve( token ); }
+					} )
+					.catch( function () {
+						if ( ! settled ) { settled = true; clearTimeout( timeout ); resolve( '' ); }
+					} );
+			} );
+		} );
+	}
+
+	if ( form ) {
+		form.addEventListener( 'submit', function ( e ) {
+			e.preventDefault();
+
+			var submitBtn = form.querySelector( '.contact-form__submit' );
+			submitBtn.classList.add( 'is-loading' );
+			feedback.textContent = '';
+			feedback.className = 'contact-form__feedback';
+
+			getRecaptchaToken()
+				.then( function ( token ) {
+					var formData = new FormData( form );
+					formData.append( 'recaptcha_token', token );
+
+					return fetch( CONTACT_ENDPOINT, {
+						method: 'POST',
+						body: formData,
+					} );
+				} )
+				.then( function ( res ) { return res.json(); } )
+				.then( function ( data ) {
+					submitBtn.classList.remove( 'is-loading' );
+					if ( data.success ) {
+						feedback.textContent = data.message;
+						feedback.classList.add( 'is-success' );
+						form.reset();
+					} else {
+						feedback.textContent = data.message;
+						feedback.classList.add( 'is-error' );
+					}
+				} )
+				.catch( function () {
+					submitBtn.classList.remove( 'is-loading' );
+					feedback.textContent = 'Une erreur réseau est survenue. Merci de réessayer.';
+					feedback.classList.add( 'is-error' );
+				} );
+		} );
+	}
 } )();
