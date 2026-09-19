@@ -558,6 +558,17 @@ section { position: relative; }
 	overflow: hidden;
 	aspect-ratio: 4 / 5;
 }
+.why__photo--logo {
+	background: var(--navy);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.why__photo.why__photo--logo img {
+	width: 48%;
+	height: auto;
+	object-fit: contain;
+}
 .why__photo img {
 	width: 100%;
 	height: 100%;
