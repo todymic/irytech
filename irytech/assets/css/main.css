@@ -800,12 +800,23 @@ section { position: relative; }
 	padding: 22px;
 	background: linear-gradient(180deg, rgba(28, 36, 60, 0) 45%, rgba(13, 16, 26, 0.9) 100%);
 	opacity: 0;
-	transition: opacity 0.35s var(--ease);
+	transition: opacity 0.4s var(--ease);
+	pointer-events: none;
+}
+
+.project-card__overlay-text {
+	transform: translateY(20px);
+	transition: transform 0.4s var(--ease);
 }
 
 .project-card:hover .project-card__overlay,
 .project-card__link:focus-visible .project-card__overlay {
 	opacity: 1;
+}
+
+.project-card:hover .project-card__overlay-text,
+.project-card__link:focus-visible .project-card__overlay-text {
+	transform: translateY(0);
 }
 
 .project-card__overlay .project-card__title {
